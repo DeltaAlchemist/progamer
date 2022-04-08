@@ -8,7 +8,7 @@
 <ui:composition template="/_template.xhtml">
 	<ui:define name="content">
 		<h:form>
-			<div class="card">
+			<div class="card" style="margin: 1em">
 				<p:dataTable var="setup" value="#{setupBean.setups}">
 					<p:column headerText="Id">
 						<h:outputText value="#{setup.id}" />
