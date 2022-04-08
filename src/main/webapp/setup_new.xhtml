@@ -9,6 +9,9 @@
 	<ui:define name="content">
 		<!-- FORM -->
 		<h:form>
+			<p:messages id="messages" closable="true">
+				<p:autoUpdate />
+			</p:messages>
 			<p:card style="width: 25em; margin: 1em auto">
 				<f:facet name="title">
 			        New Setup
@@ -16,19 +19,40 @@
 				<div class="ui-fluid">
 					<div class="p-field">
 						<label for="name">Name</label>
-						<p:inputText value="#{setupBean.setup.name}" id="name" type="text" />
+						<p:inputText 
+							value="#{setupBean.setup.name}" 
+							id="name" 
+							type="text"
+							required="true" 
+							requiredMessage="The field NAME is required." 
+						/>
 					</div>
 					<br />
 					<div class="p-field">
 						<label for="description">Description</label>
-						<p:inputTextarea value="#{setupBean.setup.description}"
-							id="description" type="text" />
+						<p:inputTextarea 
+							value="#{setupBean.setup.description}"
+							id="description" 
+							type="text" 
+							validatorMessage="Description has to be at least 10 characters and maximun of 255"
+						>
+							<f:validateLength minimum="10" maximum="255"/>
+						</p:inputTextarea>
 					</div>
 					<br />
 					<div class="p-field">
 						<label for="price">Price</label>
-						<p:inputNumber value="#{setupBean.setup.price}" id="price"
-							symbol="R$ " decimalSeparator="," thousandSeparator="." />
+						<p:inputNumber 
+							value="#{setupBean.setup.price}" 
+							id="price"
+							symbol="R$ " 
+							decimalSeparator="," 
+							thousandSeparator="."
+							required="true"
+							requiredMessage="The field PRICE is required."
+						>
+							<f:validateDoubleRange minimum="1" />
+						</p:inputNumber>
 					</div>
 				</div>
 

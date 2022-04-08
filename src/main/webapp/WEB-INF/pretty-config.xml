@@ -9,7 +9,7 @@
 		<view-id value="setups.xhtml" />
 	</url-mapping>
 	<url-mapping id="form-setup">
-		<pattern value="/setup/new" />
+		<pattern value="/setup-new" />
 		<view-id value="setup_new.xhtml" />
 	</url-mapping>
 	<url-mapping id="profile">
