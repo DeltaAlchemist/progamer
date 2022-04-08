@@ -16,6 +16,11 @@ public class Setup {
 	private String description = "Descrição do Setup";
 	private BigDecimal price = new BigDecimal(2000);
 	
+	
+	public Long getId() {
+		return id;
+	}
+
 	public String getName() {
 		return name;
 	}

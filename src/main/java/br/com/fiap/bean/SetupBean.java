@@ -1,5 +1,7 @@
 package br.com.fiap.bean;
 
+import java.util.List;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
@@ -17,6 +19,9 @@ public class SetupBean {
 		new SetupDao().insert(setup);
 	}
 	
+	public List<Setup> getSetups() {
+		return new SetupDao().list();
+	}
 
 	public Setup getSetup() {
 		return setup;
